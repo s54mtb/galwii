@@ -1,0 +1,156 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\xFush\Gal\galwii\swii\galwii.uvproj
+Project File Date:  06/29/2014
+
+<h2>Output:</h2>
+Rebuild target 'GalWii'
+compiling galwii.c...
+compiling RTX_Conf_CM.c...
+compiling misc.c...
+compiling stm32f10x_adc.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_tim.c...
+compiling DMA_STM32F10x.c...
+compiling GPIO_STM32F10x.c...
+assembling startup_stm32f10x_md.s...
+compiling system_stm32f10x.c...
+compiling USBD_STM32F10x.c...
+compiling USBD_Config_0.c...
+linking...
+Program Size: Code=8876 RO-data=440 RW-data=120 ZI-data=4784  
+".\out\galwii.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.3.20.4.pack
+                ::CMSIS:RTOS:1.0 (API)
+                Cortex Microcontroller Software Interface Standard (CMSIS) CORE, DSP, RTOS, Driver
+   * Component: RTOS Version: 1.0
+   * Component: USB Device Version: 1.10
+   * Component: CORE Version: 3.20.0
+   * Component: Keil RTX Version: 4.74.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDK-Middleware.5.1.5.pack
+                Keil.MDK-Pro::USB:CORE:5.0.5
+                Keil MDK-ARM Professional Middleware for ARM Cortex-M based devices
+   * Component: CORE Version: 5.0.5
+   * Component: Device Version: 5.0.5
+   * Component: CDC Version: 5.0.5
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.1.0.5.pack
+                Keil::Device:Startup:1.0.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+   * Component: Framework Version: 3.5.1
+   * Component: ADC Version: 3.5.0
+   * Component: GPIO Version: 3.5.0
+   * Component: RCC Version: 3.5.0
+   * Component: TIM Version: 3.5.0
+   * Component: GPIO Version: 1.01.0
+   * Component: DMA Version: 1.01.0
+   * Component: Full-speed Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  E:\xFush\Gal\galwii\swii\RTE
+  E:\xFush\Gal\galwii\swii\RTE\Device\STM32F103RB
+  C:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Driver\Include
+  C:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include
+  C:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS_RTX\INC
+  C:\Keil\ARM\PACK\Keil\MDK-Middleware\5.1.5\USB\Include
+  C:\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+  C:\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\StdPeriph_Driver\inc
+  C:\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\RTE_Driver
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::CMSIS:RTOS:1.0 (API)
+
+   * Component: ::Drivers:USB Device:1.10 (API)
+      Include file:  CMSIS\Driver\Include\Driver_USBD.h
+
+   * Component: ARM::CMSIS:CORE:3.20.0
+
+   * Component: ARM::CMSIS:RTOS:Keil RTX:4.74.0
+      Include file:  CMSIS_RTX\INC\cmsis_os.h
+      Source file:   CMSIS_RTX\Templates\RTX_Conf_CM.c
+      Include file:  CMSIS_RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS_RTX\UserCodeTemplates\main.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\MsgQueue.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\Thread.c
+      Library file:  CMSIS_RTX\Lib\ARM\RTX_CM3.lib
+
+   * Component: Keil.MDK-Pro::USB:CORE:5.0.5
+      Include file:  USB\Include\rl_usb.h
+      Library file:  USB\Lib\ARM\USB_CM3_L.lib
+
+   * Component: Keil.MDK-Pro::USB:Device:5.0.5
+      Source file:   USB\Config\USBD_Config.c
+
+   * Component: Keil.MDK-Pro::USB:Device:CDC:5.0.5
+      Source file:   USB\Config\USBD_Config_CDC.h
+      Source file:   USB\Template\USBD_User_CDC.c
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.5.1
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+
+   * Component: Keil::Device:StdPeriph Drivers:ADC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_adc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_adc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+
+   * Component: Keil::Device:GPIO:1.01.0
+      Include file:  RTE_Driver\GPIO_STM32F10x.h
+      Source file:   RTE_Driver\GPIO_STM32F10x.c
+
+   * Component: Keil::Device:DMA:1.01.0
+      Include file:  RTE_Driver\DMA_STM32F10x.h
+      Source file:   RTE_Driver\DMA_STM32F10x.c
+
+   * Component: Keil::Drivers:USB Device:Full-speed:1.0.0
+      Source file:   RTE_Driver\USBD_STM32F10x.c
+ Component: Keil::Drivers:USB Device:Full-speed:1.0.0
+      Source file:   RTE_Driver\USBD_STM32F10x.c
+Target not created
+1.0
+      Include file:  RTE_Driver\DMA_STM32F10x.h
+      Source file:   RTE_Driver\DMA_STM32F10x.c
+
+   * Component: Keil::Drivers:UART:1.01.0
+      Source file:   RTE_Driver\UART_STM32F10x.c
+
+   * Component: Keil::Drivers:USB Device:Full-speed:1.0.0
+      Source file:   RTE_Driver\USBD_STM32F10x.c
+Target not created
+e:   RTE_Driver\USBD_STM32F10x.c
+Target not created
