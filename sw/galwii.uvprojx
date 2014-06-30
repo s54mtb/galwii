@@ -542,13 +542,13 @@
 
   <RTE>
     <apis>
-      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" exclusive="0">
+      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" Cvendor="ARM" exclusive="0">
         <package name="CMSIS" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="ARM" version="3.20.4"/>
         <targetInfos>
           <targetInfo name="GalWii"/>
         </targetInfos>
       </api>
-      <api Capiversion="1.10" Cclass="Drivers" Cgroup="USB Device" exclusive="0">
+      <api Capiversion="1.10" Cclass="Drivers" Cgroup="USB Device" Cvendor="ARM" exclusive="0">
         <package name="CMSIS" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="ARM" version="3.20.4"/>
         <targetInfos>
           <targetInfo name="GalWii"/>

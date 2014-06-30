@@ -7,6 +7,63 @@ extern uint32_t 	lastADC;
 extern uint32_t 	lastpwmval1;
 extern uint32_t 	lastpwmval2;
 
+
+/**
+ * Gas paddle linearisation 
+ * PWL - Piece Wise Linear transfer function
+ */
+ 
+uint16_t ADC_linearise(uint16_t adc)
+{
+	#define PWL_SIZE 	12
+	const uint16_t PWL[PWL_SIZE][2] = {  // ADC in ---> PWM out
+			{1023,0},
+			{1086,9},
+			{1506,18},
+			{1842,27},
+			{1989,36},
+			{2073,45},
+			{2115,55},
+			{2178,64},
+			{2241,73},
+			{2367,82},
+			{2682,91},
+			{3123,100}
+	};
+	
+	double x1,y1,x2,y2,frv;
+	
+	uint16_t i, returnvalue;
+	
+	i = 0;
+	
+	if (adc < PWL[0][0]) 
+		return 0;
+	if (adc > PWL[PWL_SIZE-1][0]) 
+		return 100;
+
+	// not outside bounds
+	
+  while ((i<PWL_SIZE) & (adc>PWL[i][0])) i++;
+	
+	x1 = (double)PWL[i-1][0];
+	x2 = (double)PWL[i][0];
+	y1 = (double)PWL[i-1][1];
+	y2 = (double)PWL[i][1];
+	frv = (double)adc - x1;
+	frv *= (y2-y1)/(x2-x1);
+	frv += y1;
+	
+	returnvalue = (uint16_t)frv;
+	
+	return returnvalue;
+	
+}
+
+
+
+
+
 /********************************************************************************
   ADC thread 
 	*/
@@ -64,14 +121,16 @@ void adc_thread(void const *args)
 		lastADC = avgadc;
 		
 		// Calculate PWM value for ESC1
-		pwmval = 99 + (avgadc-0x400) / 21;
+		//pwmval = 99 + (avgadc-0x400) / 21;
+		pwmval = ADC_linearise(avgadc);
 		lastpwmval1 = pwmval;
-		PWM_set(3,pwmval);
+		PWM_set(3,pwmval+99);
 
 		// Calculate PWM value for ESC2
-		pwmval = 99 + (avgadc-0x400) / 21;
+		//pwmval = 99 + (avgadc-0x400) / 21;
+		pwmval = ADC_linearise(avgadc);
   	lastpwmval2 = pwmval;
-		PWM_set(4,pwmval);
+		PWM_set(4,pwmval+99);
 		
 		osDelay (1);		// Delay 1ms
 	}

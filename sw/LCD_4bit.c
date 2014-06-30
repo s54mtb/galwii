@@ -36,7 +36,7 @@ void lcd_thread(void const *args)
 		set_cursor(0, 0);
     lcd_print (str);
 
-		sprintf(str,"%3d %%  %3d %%  ", lastpwmval1-100, lastpwmval2-100);
+		sprintf(str,"%3d %%  %3d %%  ", lastpwmval1, lastpwmval2);
 		set_cursor(0, 1);
     lcd_print (str);
 		
