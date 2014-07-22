@@ -107,7 +107,7 @@ void adc_thread(void const *args)
 	while (1)
 	{
 		// Prepare channel 0 for ADC sample		
-	  ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 1, ADC_SampleTime_1Cycles5);
+	  ADC_RegularChannelConfig(ADC1, ADC_Channel_14, 1, ADC_SampleTime_1Cycles5);
 		// Start the conversion
     ADC_SoftwareStartConvCmd(ADC1, ENABLE);
     // Wait until conversion completion

@@ -72,6 +72,8 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopB1X>0</nStopB1X>
+            <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
@@ -128,6 +130,7 @@
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
+            <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
             <UseTarget>1</UseTarget>
@@ -139,11 +142,11 @@
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>1</RestoreTracepoints>
-            <RestoreTracepoints>1</RestoreTracepoints>
-            <RestoreTracepoints>1</RestoreTracepoints>
+            <RestoreSysVw>1</RestoreSysVw>
+            <UsePdscDebugDescription>1</UsePdscDebugDescription>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>1</TargetSelection>
+          <TargetSelection>14</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -157,7 +160,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>BIN\UL2CM3.DLL</Driver>
+            <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -209,7 +212,7 @@
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M3"</AdsCpuType>
             <RvctDeviceName></RvctDeviceName>
-            <mOS>0</mOS>
+            <mOS>1</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
             <hadIROM>1</hadIROM>
@@ -541,14 +544,31 @@
   </Targets>
 
   <RTE>
+    <packages>
+      <package name="CMSIS" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="ARM" version="3.20.4">
+        <targetInfos>
+          <targetInfo name="GalWii" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="MDK-Middleware" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="Keil" version="5.1.5">
+        <targetInfos>
+          <targetInfo name="GalWii" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5">
+        <targetInfos>
+          <targetInfo name="GalWii" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+    </packages>
     <apis>
-      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" Cvendor="ARM" exclusive="0">
+      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" exclusive="0">
         <package name="CMSIS" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="ARM" version="3.20.4"/>
         <targetInfos>
           <targetInfo name="GalWii"/>
         </targetInfos>
       </api>
-      <api Capiversion="1.10" Cclass="Drivers" Cgroup="USB Device" Cvendor="ARM" exclusive="0">
+      <api Capiversion="1.10" Cclass="Drivers" Cgroup="USB Device" exclusive="0">
         <package name="CMSIS" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="ARM" version="3.20.4"/>
         <targetInfos>
           <targetInfo name="GalWii"/>
